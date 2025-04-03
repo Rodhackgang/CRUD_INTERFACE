@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophie Bluel - Architecte d'Intérieur</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script src="https://kit.fontawesome.com/48c05c0f36.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sophie Bluel</h1>
+            <p>ARCHITECTE D'INTÉRIEUR</p>
+        </div>
+        <nav id="navbar">
+            <ul class="nav-links">
+                <li class="animate__animated animate__fadeInLeft"><a href="#projects">Projets</a></li>
+                <li class="animate__animated animate__fadeInRight"><a href="#contact">Contact</a></li>
+                <li class="animate__animated animate__fadeInDown"><a href="./login.html">Login</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><img src="./assets/icons/instagram.png" alt="Instagram"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="image-container animate__animated animate__fadeInUp">
+                <img src="./assets/images/sophie-bluel.png" alt="Sophie Bluel">
+            </div>
+            <div class="text-container">
+                <h2 class="animate__animated animate__fadeInLeft">Designer d'espace</h2>
+                <p class="animate__animated animate__fadeInRight" data-wow-delay="0.5s">
+                    Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
+                    finale du chantier.
+                </p>
+                <p class="animate__animated animate__fadeInRight" data-wow-delay="1s">
+                    Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+                    couleurs dans le respect de l'esprit des lieux, et le choix adapté des matériaux. Le suivi du
+                    chantier sera assuré dans le souci du détail, le respect du planning et du budget.
+                </p>
+                <p class="animate__animated animate__fadeInDown" data-wow-delay="1.5s">
+                    En cas de besoin, une équipe pluridisciplinaire constituée de : architecte DPLG, décorateur(trice).
+                </p>
+            </div>
+        </section>
+    </main>
+    <section id="projects" class="projects-section">
+        <center>
+            <header class="projects-header">
+                <h2 class="projects-title">Mes projets</h2>
+                <button class="edit-button">modifier</button>
+            </header>
+        </center>
+        <div class="flex-row-center" id="filtres">
+            <!--
+            <button class="btn-filtres">Tous</button>
+            <button class="btn-filtres">Objets</button>
+            <button class="btn-filtres">Appartements</button>
+            <button class="btn-filtres">Hotels &amp; restaurants</button>
+            -->
+        </div>
+
+        <div class="gallery">
+            <!--
+            <div class="gallery-item">
+                <img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
+                <p class="project-caption">Abat-jour Tahina</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
+                <p class="project-caption">Appartement Paris V</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
+                <p class="project-caption">Restaurant Sushisen - Londres</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
+                <p class="project-caption">Villa “La Balisiere” - Port Louis</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
+                <p class="project-caption">Structures Thermopolis</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
+                <p class="project-caption">Restaurant Sushisen - Londres</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
+                <p class="project-caption">Pavillon “Le coteau” - Cassis</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
+                <p class="project-caption">Villa Ferneze - Isola d’Elba</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
+                <p class="project-caption">Appartement Paris XVIII</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
+                <p class="project-caption">Bar “Lullaby” - Paris</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
+                <p class="project-caption">Hotel First Arte - New Delhi</p>
+            </div>
+            -->
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Vous avez un projet ? Discutons-en !</p>
+        <form action="#" method="post">
+            <label for="name">Nom</label>
+            <input type="text" name="name" id="name">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <input type="submit" value="Envoyer">
+        </form>
+    </section>
+    <div id="photo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <center>
+                <h2 id="gltof">Galerie photo</h2>
+            </center>
+            <div id="image-container"></div>
+            <br>
+            <hr />
+            <center>
+                <button id="add-photo-button">Ajouter une photo</button>
+            </center>
+        </div>
+    </div>
+    <div id="add-photo-modal" class="modal">
+        <div class="modal-content">
+            <button class="back-button">
+                <i class="fas fa-arrow-left"></i> Retour
+            </button>
+            <center>
+                <h2>Ajout photo</h2>
+            </center>
+            <div id="photo-upload">
+                <label for="photo" class="upload-container">
+                    <img src="./assets/images/8.jpeg" alt="Photo" id="image-preview" />
+                    <span>+ Ajouter photo</span>
+                </label>
+                <input type="file" id="photo" name="photo" accept="image/*" style="display:none;">
+            </div>
+            <div>
+                <label for="title">Titre</label>
+                <input type="text" id="title" placeholder="Entrez le titre de la photo" />
+                <label for="category">Catégorie</label>
+                <select id="category">
+                    <option value=1>Objets</option>
+                    <option value=2>Appartements</option>
+                    <option value=3>Hotels & Restaurants</option>
+                </select>
+            </div>
+            <button id="validate">Valider</button>
+        </div>
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+                <li>Mentions Légales</li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

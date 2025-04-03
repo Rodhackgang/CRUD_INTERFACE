@@ -1,0 +1,196 @@
+openapi: 3.0.0  # Spécifie la version d'OpenAPI utilisée
+
+info:
+  title: Architect API  # Titre de l'API
+  description: API Backend for Architect Website  # Description de l'API
+  version: 1.0.0  # Version de l'API
+
+servers:
+  - url: http://localhost:5678/api/  # URL de base où l'API est accessible
+
+paths:
+  # Endpoint pour se connecter
+  /users/login:
+    post:
+      summary: Log In the user.  # Résumé de l'action : se connecter
+      requestBody:
+        required: true  # Le corps de la requête est requis
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:  # Propriété de l'email de l'utilisateur
+                  type: string
+                password:  # Propriété du mot de passe de l'utilisateur
+                  type: string
+      responses:
+        '200':  # Réponse réussie (connexion réussie)
+          description: Connected  # Description de la réponse
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:  # ID de l'utilisateur connecté
+                    type: integer
+                    format: int64
+                    example: 1
+                  token:  # Token JWT pour l'utilisateur connecté
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1MTg3NDkzOSwiZXhwIjoxNjUxOTYxMzM5fQ.JGN1p8YIfR-M-5eQ-Ypy6Ima5cKA4VbfL2xMr2MgHm4
+        '404':  # L'utilisateur n'a pas été trouvé
+          description: User not found
+        '401':  # L'utilisateur n'est pas autorisé
+          description: Not Authorized
+
+  # Endpoint pour obtenir toutes les catégories
+  /categories:
+    get:
+      summary: Returns all categories  # Résumé : obtenir toutes les catégories
+      responses:
+        '200':  # Réponse réussie
+          description: Returns an array of all categories  # Description de la réponse
+          content:
+            application/json:
+              schema:
+                type: array  # Retourne un tableau de catégories
+                items:
+                  type: object
+                  properties:
+                    id:  # ID de la catégorie
+                      type: integer
+                      format: int64
+                      example: 1
+                    name:  # Nom de la catégorie
+                      type: string
+                      example: "Objets"
+        '500':  # Erreur interne du serveur
+          description: Unexpected Error
+
+  # Endpoint pour obtenir toutes les œuvres
+  /works:
+    get:
+      summary: Returns all works  # Résumé : obtenir toutes les œuvres
+      responses:
+        '200':  # Réponse réussie
+          description: Returns an array of all works  # Description de la réponse
+          content:
+            application/json:
+              schema:
+                type: array  # Retourne un tableau d'œuvres
+                items:
+                  type: object
+                  properties:
+                    id:  # ID de l'œuvre
+                      type: integer
+                      format: int64
+                      example: 1
+                    title:  # Titre de l'œuvre
+                      type: string
+                      example: "Abajour Tahina"
+                    imageUrl:  # URL de l'image de l'œuvre
+                      type: string
+                      example: "http://localhost:5678/images/abajour-tahina1651286843956.png"
+                    categoryId:  # ID de la catégorie de l'œuvre
+                      type: integer
+                      format: int64
+                      example: 1
+                    userId:  # ID de l'utilisateur qui a créé l'œuvre
+                      type: integer
+                      format: int64
+                      example: 1
+                    category:  # Détails de la catégorie de l'œuvre
+                      type: object
+                      properties:
+                        id:  # ID de la catégorie
+                          type: integer
+                          format: int64
+                          example: 1
+                        name:  # Nom de la catégorie
+                          type: string
+                          example: "Objets"
+        '500':  # Erreur interne du serveur
+          description: Unexpected Error
+
+    # Endpoint pour envoyer une nouvelle œuvre
+    post:
+      summary: Send a new Work  # Résumé : envoyer une nouvelle œuvre
+      security:
+        - BearerAuth: []  # Authentification requise via Bearer token
+      requestBody:
+        required: true  # Le corps de la requête est requis
+        content:
+          multipart/form-data:  # Données envoyées sous forme de formulaire multipart
+            schema:
+              type: object
+              properties:
+                image:  # L'image de l'œuvre à télécharger
+                  type: string
+                  format: binary
+                title:  # Titre de l'œuvre
+                  type: string
+                category:  # Catégorie de l'œuvre
+                  type: integer
+                  format: int64
+      responses:
+        '201':  # Création réussie de l'œuvre
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:  # ID de l'œuvre créée
+                    type: integer
+                    format: int64
+                  title:  # Titre de l'œuvre
+                    type: string
+                  imageUrl:  # URL de l'image de l'œuvre
+                    type: string
+                  categoryId:  # ID de la catégorie
+                    type: integer
+                  userId:  # ID de l'utilisateur ayant créé l'œuvre
+                    type: integer
+                    format: int64
+        '500':  # Erreur interne du serveur
+          description: Unexpected Error
+        '401':  # Non autorisé
+          description: Unauthorized
+        '400':  # Mauvaise requête
+          description: Bad Request
+
+  # Endpoint pour supprimer une œuvre par son ID
+  /works/{id}:
+    delete:
+      summary: Delete a work depending on id  # Résumé : supprimer une œuvre par son ID
+      security:
+        - BearerAuth: []  # Authentification requise via Bearer token
+      parameters:
+        - name: id  # Paramètre pour l'ID de l'œuvre à supprimer
+          in: path
+          required: true  # Ce paramètre est obligatoire
+          description: id of work to be deleted  # Description du paramètre
+          schema:
+            type: integer
+            format: int64
+            example: 1
+      responses:
+        '200':  # Suppression réussie
+          description: Item Deleted
+        '401':  # Non autorisé
+          description: Unauthorized
+        '500':  # Erreur interne du serveur
+          description: Unexpected Behaviour
+
+components:
+  securitySchemes:
+    BearerAuth:  # Définition du schéma d'authentification Bearer (JWT)
+      type: http
+      scheme: bearer
+  # Définition de la sécurité JWT
+  securityDefinitions:
+    Bearer:
+      type: JWT  # Utilisation du JWT pour l'authentification
+      name: Authorization  # Nom du champ d'autorisation dans l'en-tête
+      in: header  # L'autorisation est envoyée dans l'en-tête de la requête
