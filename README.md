@@ -1,58 +1,77 @@
-# Frontend - Sophie Bluel
+<div align="center">
 
-Ce repo contient le code frontend de l'architecte Sophie Bluel, qui interagit avec l'API backend de Sophie Bluel.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=150&section=header&text=Portfolio%20architecte&fontSize=40&fontColor=ffffff&fontAlignY=38&desc=API%20et%20interface&descAlignY=62&descSize=14&animation=fadeIn" width="100%" alt="Portfolio architecte — API et interface" />
 
-## Prérequis
+<p>
+  <img src="https://img.shields.io/badge/Projet-3FB950?style=flat-square" alt="Projet" />
+  <img src="https://img.shields.io/github/languages/top/Rodhackgang/CRUD_INTERFACE?style=flat-square&color=B45309" alt="Langage principal" />
+  <img src="https://img.shields.io/github/last-commit/Rodhackgang/CRUD_INTERFACE?style=flat-square&color=B45309&label=dernier%20commit" alt="Dernier commit" />
+  <img src="https://img.shields.io/github/repo-size/Rodhackgang/CRUD_INTERFACE?style=flat-square&color=B45309&label=taille" alt="Taille" />
+</p>
 
-Avant de lancer le frontend, vous devez d'abord démarrer le backend. Voici les étapes pour cela :
+<p>
+  <img src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white&style=for-the-badge" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white&style=for-the-badge" alt="Express" />
+  <img src="https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white&style=for-the-badge" alt="SQLite" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge" alt="CSS3" />
+</p>
 
-1. **Lancer le backend :**
-   - Clonez le repo backend.
-   - Allez dans le dossier du backend.
-   - Exécutez la commande suivante pour installer les dépendances :
-     ```
-     npm install
-     ```
-   - Ensuite, lancez le backend avec :
-     ```
-     npm start
-     ```
+</div>
 
-2. **Lancer le frontend :**
-   - Clonez ce repo frontend.
-   - Allez dans le dossier du frontend.
-   - Exécutez la commande suivante pour installer les dépendances :
-     ```
-     npm install
-     ```
+---
 
-3. **Lancer le live server :**
-   - Après avoir installé les dépendances, lancez le frontend avec un serveur local en utilisant `live-server` :
-     ```
-     npx live-server
-     ```
+## Présentation
 
-4. **Fonctionnalités du frontend :**
-   - Une fois le serveur frontend démarré, vous pouvez accéder à l'interface pour interagir avec l'API backend.
-   - Le frontend permet de :
-     - Trier les données par catégorie.
-     - Ajouter de nouvelles données.
-     - Supprimer des données existantes.
+Site portfolio d'architecte d'intérieur avec espace d'administration : galerie filtrable, connexion, ajout et suppression de projets. L'API repose sur SQLite et sert les médias téléversés.
 
-5. **Compte de test pour Sophie Bluel :**
-   - **Email :** sophie.bluel@test.tld
-   - **Mot de passe :** S0phie
+**Pourquoi ce choix.** Un portfolio se met à jour par son propriétaire, pas par son développeur. L'interface d'administration s'ouvre par-dessus le site public, sans page séparée.
 
-## Documentation de l'API (Swagger)
+---
 
-Pour consulter la documentation de l'API, vous pouvez utiliser [Swagger](http://localhost:PORT/api-docs) après avoir démarré le backend.
-- Ouvrez Chrome ou Firefox.
-- Accédez à l'URL suivante pour voir la documentation complète :
-http://localhost:PORT/api-docs
+## Ce que fait le projet
 
-## Notes supplémentaires
+- **API** — contrôleurs `users`, `categories` et `works`, base SQLite, documentation Swagger
+- **Interface** — galerie filtrée par catégorie, modale d’administration, téléversement d’images
+- Authentification par jeton, routes d’écriture protégées
 
-- Assurez-vous que le backend est correctement démarré avant de lancer le frontend.
-- Vous pouvez personnaliser les données en utilisant les fonctionnalités du frontend pour les trier, ajouter ou supprimer selon les catégories.
+---
 
-Bonne utilisation !
+## Stack
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white&style=for-the-badge" alt="Node.js" />
+<img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white&style=for-the-badge" alt="Express" />
+<img src="https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white&style=for-the-badge" alt="SQLite" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge" alt="JavaScript" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge" alt="HTML5" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge" alt="CSS3" />
+
+</div>
+
+---
+
+## Démarrage
+
+```bash
+cd Backend && npm install && npm start
+# puis ouvrir le frontend dans le navigateur
+```
+
+---
+
+<div align="center">
+
+### Développé par Rodrigue SAMA
+
+<a href="https://github.com/Rodhackgang"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+<a href="https://wa.me/22677701726"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" /></a>
+<a href="mailto:Samarodrigue690@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+
+<sub>Ouagadougou, Burkina Faso 🇧🇫</sub>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer" width="100%" alt="" />
+
+</div>
